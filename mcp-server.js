@@ -44,7 +44,7 @@ app.post('/mcp', (req, res) => {
 });
 
 // ✅ SSE connection endpoint for n8n MCP Client
-app.get('/mcp', (req, res) => {
+app.get('/mcp/sse', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
