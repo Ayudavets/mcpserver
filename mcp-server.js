@@ -12,6 +12,7 @@ app.get('/health', (req, res) => {
   res.send({ status: '✅ MCP server is running' });
 });
 
+// POST endpoint for commands from n8n
 app.post('/mcp', (req, res) => {
   const { text1, type, ID, channel } = req.body;
 
@@ -31,7 +32,8 @@ app.post('/mcp', (req, res) => {
   res.status(200).json(response);
 });
 
-app.get('/mcp/sse', (req, res) => {
+// GET endpoint for SSE (used by n8n to open connection)
+app.get('/mcp', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
