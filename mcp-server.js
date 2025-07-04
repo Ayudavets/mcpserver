@@ -31,7 +31,7 @@ app.post('/mcp', (req, res) => {
   res.status(200).json(response);
 });
 
-app.get('/mcp', (req, res) => {
+app.get('/mcp/sse', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
